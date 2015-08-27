@@ -1,0 +1,5 @@
+greet: 1.0 hello adjauth !;
+adjauth: 0.8 adj* auth | 0.2 adjauth and adjauth;
+auth: 0.25 Chomsky | 0.25 Lambek | 0.25 Jacobsen | 0.25 Frege;
+adj: 0.15 great complement | 0.15 awesome complement | 0.15 extraordinary complement | 0.15 cool as a fridge, | 0.15 fantastic like the supergroup, | 0.15 marvelous complement | 0.1 incredible as Hulk,;
+complement: 0.3 as a phrase, | 0.4 as a literal, | 0.3 like the speech,;
