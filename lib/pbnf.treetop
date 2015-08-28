@@ -41,6 +41,6 @@ grammar PseudoBNF
 	end
 	
 	rule sep
-		[ \n]*
+		[ \n\r]*
 	end
 end

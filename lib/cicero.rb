@@ -9,17 +9,17 @@ def int_poisson(lambda)
 		u = rand
 		p = p *u
 	end
-	return k -1
+	return k - 1
 end
 
-class Cicero
 
+class CicerO
 	def self.build(grammar, max_recursion = 100)
-		Treetop.load "pbnf"
+		Treetop.load "lib/pbnf"
 		parser = PseudoBNFParser.new
 		res = parser.parse(grammar)
 		if res
-			return Cicero.new res.content, max_recursion
+			return CicerO.new res.content, max_recursion
 		else
 			return nil
 		end
@@ -116,7 +116,6 @@ class Cicero
 		end
 		return res
 	end
-
 end
 
 if __FILE__ == $0 and ARGV.length > 0
@@ -126,7 +125,7 @@ if __FILE__ == $0 and ARGV.length > 0
 		data += line
 	end
 
-	cic = Cicero.build(data)
+	cic = CicerO.build(data)
 	if cic
 		s = cic.speak()
 		puts s

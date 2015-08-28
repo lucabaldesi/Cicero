@@ -1,0 +1,21 @@
+<title>Cicero</title>
+
+<%= render 'messages' %>
+
+<%= form_tag("/", method: "post") do %>
+	<p>
+	<%= label_tag(:name, "Name") %><br>
+	<%= text_field_tag(:name, @grammar_name) %>
+	</p>
+	<p>
+	<%= label_tag(:grammar, "Grammar:") %><br>
+	<%= text_area_tag(:grammar, @grammar) %>
+	</p>
+
+	<p>
+	<%= submit_tag("Try it!") %>
+	</p>
+<% end %>
+
+<p><h2>API</h2>
+</p>
