@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 	resources :speeches
+	resources :users, only: [:index, :new, :create, :show]
 	root 'speeches#sandbox'
 	post '/' => 'speeches#trysandbox'
   # The priority is based upon order of creation: first created -> highest priority.
