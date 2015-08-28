@@ -1,8 +1,8 @@
-require 'digest/md5'
-
 class UsersController < ApplicationController
+	before_filter :authenticate, :except => [:new, :create]
+
 	def index
-		render plain: "Not allowed"
+		render plain: "Not implemented"
 	end
 
 	def new
