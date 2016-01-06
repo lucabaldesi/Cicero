@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
 	before_filter :authenticate, :except => [:new, :create]
 
-	def index
-		render plain: "Not implemented"
-	end
+#	def index
+#		render plain: "Not implemented"
+#	end
 
 	def new
 
@@ -22,12 +22,12 @@ class UsersController < ApplicationController
 		end
 	end
 
-	def show
-		@user = User.find_by_id(params[:id])
-	end
+#	def show
+#		#@user = User.find_by_id(params[:id])
+#		@user = @current_user
+#	end
 
 	def myuser
-		authenticate
 		@user = @current_user
 		render "show"
 	end

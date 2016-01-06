@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 	get "/users/myuser" => 'users#myuser'
 	get "/api" => 'application#api'
 	resources :speeches, only: [:create, :show, :index, :destroy]
-	resources :users, only: [ :new, :create, :show]
+	resources :users, only: [ :new, :create]
 	root 'speeches#sandbox'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
