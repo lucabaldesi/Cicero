@@ -1,3 +1,12 @@
+#
+#This is cicero: a text speech generator
+#
+# copyright (c) 2015 luca baldesi
+#
+# this is free software released under GPLv3
+# see LICENCE file for details
+#
+
 require 'treetop'
 
 def int_poisson(lambda)

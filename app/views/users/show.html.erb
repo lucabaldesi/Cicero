@@ -1,5 +1,13 @@
-<%= render 'messages' %>
+<%= render 'header' %>
 
 <% if @user %>
 	<p><%= @user.mail %> </p>
+	<table>
+	<% @user.speech.each do |s| %>
+		<tr>
+			<td> <%= link_to s, s %> </td>
+			<td> <%= link_to "delete", s, method: "delete"%> </td>
+		</tr>
+	<% end %>
+	</table>
 <% end %>

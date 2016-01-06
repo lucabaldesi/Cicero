@@ -1,8 +1,6 @@
-<title>Cicero</title>
+<%= render 'header' %>
 
-<%= render 'messages' %>
-
-<%= form_tag("/", method: "post") do %>
+<%= form_tag( url_for(controller: "speeches", action: "create"), method: "post") do %>
 	<p>
 	<%= label_tag(:name, "Name") %><br>
 	<%= text_field_tag(:name, @grammar_name) %>
@@ -13,9 +11,8 @@
 	</p>
 
 	<p>
-	<%= submit_tag("Try it!") %>
+	<%= submit_tag("Try it!", name: "trial") %>
+	<%= submit_tag("Post it!", name: "save") %>
 	</p>
 <% end %>
 
-<p><h2>API</h2>
-</p>

@@ -1,0 +1,11 @@
+<% if @error %>
+	<p id='error'>Error: <%= @error %> </p>
+<% end %>
+
+<% if @speech and @words %>
+	<p id='speech'> <%= "#{@speech}: "+ @words %> </p>
+<% end %>
+
+<% if @info %>
+	<p class=info> <%= @info %> </p>
+<% end %>

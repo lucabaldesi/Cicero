@@ -1,0 +1,40 @@
+<%= render 'header' %>
+
+<h2>API</h2>
+<table>
+	<tr>
+		<td class=table_head>Description</td>
+		<td class=table_head>URL</td>
+		<td class=table_head>Parameters</td>
+	</tr>
+	<tr>
+		<td>Get the list of all speeches</td>
+		<td>GET /speeches</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Create a new user</td>
+		<td>POST /users</td>
+		<td>mail, password</td>
+	</tr>
+	<tr>
+		<td>Get the user's speech list</td>
+		<td>GET /users/myuser</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Create a new speech</td>
+		<td>POST /speeches</td>
+		<td>grammar_name, grammar, save</td>
+	</tr>
+	<tr>
+		<td>Delete a speech</td>
+		<td>DELETE /speeches/speech_name</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Generate a random speech</td>
+		<td>GET /speeches/speech_id</td>
+		<td></td>
+	</tr>
+</table>
