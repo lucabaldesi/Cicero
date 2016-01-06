@@ -1,7 +1,7 @@
 class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
-      t.string :mail
+      t.string :name
       t.string :shadow
 
       t.timestamps null: false

@@ -1,5 +1,5 @@
 <%= render 'header' %>
 
 <% @speaches.each do |s| %>
-	<%= link_to s, s %>
+	<%= link_to s, s %> by <span class='author'><%= s.user.name %></span>
 <% end %>

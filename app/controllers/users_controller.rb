@@ -11,8 +11,8 @@ class UsersController < ApplicationController
 	
 	def create
 		shadow = Digest::MD5.hexdigest(params["password"])
-		email = params["email"]
-		@neo = User.new({mail: email, shadow: shadow})
+		name = params["name"]
+		@neo = User.new({name: name, shadow: shadow})
 
 		if @neo.save
 			redirect_to @neo

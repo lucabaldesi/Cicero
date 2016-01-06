@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate
 	  authenticate_or_request_with_http_basic do |user, pass|
-		  @current_user = User.find_by_mail(user)
+		  @current_user = User.find_by_name(user)
 		  (@current_user) && Digest::MD5.hexdigest(pass) == @current_user.shadow
 	  end
   end

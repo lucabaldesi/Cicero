@@ -1,7 +1,7 @@
 <%= render 'header' %>
 
 <% if @user %>
-	<p><%= @user.mail %> </p>
+	<p><%= @user.name %> </p>
 	<table>
 	<% @user.speech.each do |s| %>
 		<tr>
