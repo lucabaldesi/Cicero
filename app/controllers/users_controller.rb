@@ -1,3 +1,5 @@
+require_dependency 'record_authenticate'
+
 class UsersController < ApplicationController
 	before_filter :authenticate, :except => [:new, :create]
 
@@ -10,12 +12,12 @@ class UsersController < ApplicationController
 	end
 	
 	def create
-		shadow = Digest::MD5.hexdigest(params["password"])
+		shadow = params["password"]
 		name = params["name"]
 		@neo = User.new({name: name, shadow: shadow})
 
 		if @neo.save
-			redirect_to @neo
+			redirect_to url_for(controller: 'users', action: 'myuser') 
 		else
 			@error = "Credentials not valid"
 			render "new"

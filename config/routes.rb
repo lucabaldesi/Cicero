@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 	get "/users/myuser" => 'users#myuser'
 	get "/api" => 'application#api'
+	get "/signin" => 'application#signin'
 	resources :speeches, only: [:create, :show, :index, :destroy]
 	resources :users, only: [ :new, :create]
 	root 'speeches#sandbox'

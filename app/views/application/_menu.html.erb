@@ -1,9 +1,15 @@
+<%
+  def base_url
+	#"http://" + request.server_name + ":#{request.server_port}"
+	""
+  end
+%>
 <ul>
-	<li> <%= link_to "Sign up", new_user_path %> </li>
-	<li> <%= link_to "My speeches", url_for(controller: 'users', action: 'myuser') %> </li>
-	<li> <%= link_to "All speeches", speeches_path %> </li>
-	<li> <%= link_to "Sandbox", "/"  %></li>
-	<li> <%= link_to "API" , "api" %> </li>
+	<li> <%= link_to "Sign up", base_url + new_user_path %> </li>
+	<li> <%= link_to "My speeches", base_url + url_for(controller: 'users', action: 'myuser') %> </li>
+	<li> <%= link_to "All speeches", base_url + speeches_path %> </li>
+	<li> <%= link_to "Sandbox", base_url  %></li>
+	<li> <%= link_to "API" , base_url + "/api" %> </li>
 </ul>
 <hr>
 

@@ -4,4 +4,5 @@ class User < ActiveRecord::Base
 	validates(:shadow, presence:true, length: { minimum: 1})
 	validates(:name, presence:true, length: { minimum: 4, maximum: 255}, uniqueness: { case_sensitive: false})
 	has_many :speech
+	credentials :name, :shadow
 end

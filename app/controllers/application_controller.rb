@@ -6,10 +6,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def authenticate
-	  authenticate_or_request_with_http_basic do |user, pass|
-		  @current_user = User.find_by_name(user)
-		  (@current_user) && Digest::MD5.hexdigest(pass) == @current_user.shadow
-	  end
+	authenticate_with_http_basic do |user,pass|
+		  @current_user = User.authenticate user, pass
+	end
+	unless (@current_user)
+		redirect_to '/signin' 
+	end
+	@current_user
   end
 
   def get_user
@@ -17,6 +20,9 @@ class ApplicationController < ActionController::Base
   end
 
   def api
+  end
+
+  def signin
   end
 
 end
