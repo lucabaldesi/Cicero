@@ -3,8 +3,8 @@ require 'active_record'
 
 class ActiveRecord::Base
 	define_singleton_method :credentials do |name, pwd|
-		raise NameError unless self.attribute_names.include? name.to_s
-		raise NameError unless self.attribute_names.include? pwd.to_s
+#		raise NameError unless self.attribute_names.include? name.to_s
+#		raise NameError unless self.attribute_names.include? pwd.to_s
 		define_method :set_pass_shadow do |secret|
 			write_attribute pwd, Digest::SHA1.hexdigest("#{secret}")
 		end
