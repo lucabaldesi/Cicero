@@ -1,11 +1,7 @@
 require_dependency 'record_authenticate'
 
 class UsersController < ApplicationController
-	before_filter :authenticate, :except => [:new, :create]
-
-#	def index
-#		render plain: "Not implemented"
-#	end
+	before_filter :authentication_kiss, :except => [:new, :create]
 
 	def new
 
@@ -24,13 +20,10 @@ class UsersController < ApplicationController
 		end
 	end
 
-#	def show
-#		#@user = User.find_by_id(params[:id])
-#		@user = @current_user
-#	end
-
 	def myuser
-		@user = @current_user
-		render "show"
+		@user = get_user
+		if @user
+			render "show"
+		end
 	end
 end

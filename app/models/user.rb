@@ -1,3 +1,4 @@
+require 'record_authenticate'
 VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
 class User < ActiveRecord::Base

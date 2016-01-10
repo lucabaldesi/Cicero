@@ -1,7 +1,7 @@
 require_dependency 'cicero'
 
 class SpeechesController < ApplicationController
-	before_filter :authenticate, :only => [:destroy]
+	before_filter :authentication_kiss, :only => [:destroy]
 
 	def sandbox
 		f = open("lib/greet.bnf")
@@ -18,7 +18,7 @@ class SpeechesController < ApplicationController
 		cic = CicerO.build(@grammar)
 		if cic
 			if params[:save]
-				authenticate
+				authentication_kiss
 				@user = get_user
 				if @user
 					@speech = Speech.new({name: @grammar_name, grammar: @grammar, user: @user})
@@ -66,6 +66,6 @@ class SpeechesController < ApplicationController
 		else
 			@error = "Speech "+@s.to_s+" does not belong to you"
 		end
-		redirect_to @current_user	
+		redirect_to url_for(controller: 'users', action: 'myuser') # @current_user	
 	end
 end

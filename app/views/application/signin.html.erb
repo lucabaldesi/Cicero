@@ -1,23 +1,4 @@
 <%= render 'header' %>
 <h2>Sign in</h2>
 
-<script>
-function due() {
-	var user = document.getElementById("user").value;
-	var pass = document.getElementById("pass").value;
-	var target = document.getElementById("targ").value;
-	var host = window.location.hostname + ":" + window.location.port
-	var prot = window.location.protocol
-	var url = prot+"//"+user+":"+pass+"@"+host+target;
-	window.location.assign(url);
-	return false;
-}
-</script>
-
-<form method="get" action="#">
-	<input id="user" type="text" name="username" required>
-	<input id="pass" type="password" name="password" required>
-	<input id="targ" type="hidden" name="target" value=<%= url_for(controller: 'users', action: 'myuser') %> >
-	<input type="button" value="Login" onclick="due()">
-</form>
-
+<a href=<%=url_for(controller: 'users', action: 'myuser')%> id=auth-form class="httpauth" onload="this.style.backgroundColor='#990000'">Login</a>
